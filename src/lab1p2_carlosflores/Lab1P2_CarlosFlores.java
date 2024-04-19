@@ -17,7 +17,13 @@ public class Lab1P2_CarlosFlores {
             tam = leer.nextInt();
         }
         int [][] mat = create(tam);
+        System.out.println("\nMATRIZ GENERADA: ");
         print(mat);
+        tam = tam-1;
+        int fix = 0;
+        int mat_ord [][] = bublesort(mat, tam, fix);
+        System.out.println("\nMATRIZ ORDENADA: ");
+        print(mat_ord);
     }
     
     public static int [][] create(int tam){
@@ -38,6 +44,22 @@ public class Lab1P2_CarlosFlores {
             }
             System.out.println();
         }
+    }
+    
+    public static int [][] bublesort(int [][] mat, int tam, int fix){
+        for (int i = 0; i < mat.length-1; i++) {
+            if(mat[fix][i] > mat[fix][i+1]){
+                int x1 = mat[fix][i];
+                int x2 = mat[fix][i+1];
+                mat[fix][i] = x2;
+                mat[fix][i+1] = x1;
+            }
+        }
+        while(tam > fix){
+            fix++;
+            bublesort(mat,tam,fix);
+        }
+        return mat;
     }
     
 }
