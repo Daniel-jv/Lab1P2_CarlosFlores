@@ -1,5 +1,6 @@
 package lab1p2_carlosflores;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -30,6 +31,13 @@ public class Lab1P2_CarlosFlores {
         int mat_ord [][] = bublesort(mat, tam, fix);
         System.out.println("\nMATRIZ ORDENADA: ");
         print(mat_ord);
+        System.out.println("\nARREGLO DE MEDIANAS: ");
+        ArrayList <Integer> array = calc_medianas(mat);
+        print_array(array);
+        System.out.println("\nARREGLO DE MEDIANAS ORDENADO: ");
+        
+        System.out.print("\nMEDIANA DE LAS MEDIANAS: ");
+        
     }
     
     public static int [][] create(int tam){
@@ -72,8 +80,22 @@ public class Lab1P2_CarlosFlores {
         return mat;
     }
     
-    /*public static int [] array_bublesort(int [][] mat,){
-        
-    }*/
+    public static ArrayList calc_medianas(int [][] mat){
+        ArrayList <Integer> array = new ArrayList();
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
+                if(j == (mat.length-1)/2){
+                    array.add(mat[i][j]);
+                }
+            }
+        }
+        return array;
+    }
+    
+    public static void print_array(ArrayList array){
+        for (int i = 0; i < array.size(); i++) {
+            System.out.print("["+array.get(i)+"]");
+        }
+    }
     
 }
