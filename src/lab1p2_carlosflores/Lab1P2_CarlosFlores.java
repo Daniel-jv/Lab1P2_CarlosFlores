@@ -7,9 +7,9 @@ import java.util.Random;
 public class Lab1P2_CarlosFlores {
 
     /*
-    FILA 1 ASIENTO 4
-    FILA 1 ASIENTO 4
-    FILA 1 ASIENTO 4
+    |¯¯¯  |   |       /\    ¯|       /\    |¯¯¯  ¯¯|¯¯  |¯¯¯  |\  |  ¯¯|¯¯  |¯¯¯|  |    |
+    |__   |   |      /  \    |      /  \   |__     |    |---  | \ |    |    |   |  |____|_
+    |     |   |___  /¯¯¯¯\   |     /¯¯¯¯\  ___|  __|__  |___  |  \|    |    |___|       |
     */
     static Random rand = new Random();
     static Scanner leer = new Scanner(System.in);
