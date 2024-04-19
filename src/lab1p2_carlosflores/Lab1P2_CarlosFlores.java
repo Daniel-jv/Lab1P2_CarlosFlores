@@ -116,6 +116,7 @@ public class Lab1P2_CarlosFlores {
         return array;
     }
     
+    //ESTE METODO, OK....
     public static int mediana_FINAL(ArrayList <Integer> array){
         int i = (array.size()-1)/2;
         int x = array.get(i);
