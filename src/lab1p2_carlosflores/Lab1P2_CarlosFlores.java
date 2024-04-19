@@ -27,15 +27,16 @@ public class Lab1P2_CarlosFlores {
         print(mat);
         tam = tam-1;
         int fix = 0;
-        int x = 10;
         int mat_ord [][] = bublesort(mat, tam, fix);
         System.out.println("\nMATRIZ ORDENADA: ");
         print(mat_ord);
         System.out.println("\nARREGLO DE MEDIANAS: ");
         ArrayList <Integer> array = calc_medianas(mat);
         print_array(array);
+        int x = 5;
+        array = array_bublesort(array,x);
         System.out.println("\nARREGLO DE MEDIANAS ORDENADO: ");
-        
+        print_array(array);
         System.out.print("\nMEDIANA DE LAS MEDIANAS: ");
         
     }
@@ -97,5 +98,21 @@ public class Lab1P2_CarlosFlores {
             System.out.print("["+array.get(i)+"]");
         }
     }
+    
+   public static ArrayList array_bublesort(ArrayList<Integer> array, int x){
+        for (int i = 0; i < array.size()-1; i++) {
+            if(array.get(i) > array.get(i+1)){
+                 int x1 = array.get(i);
+                 int x2 = array.get(i+1);
+                 array.set(i, x2);
+                 array.set(i+1, x1);
+            }
+        }
+        while(x > 0){
+            x--;
+            array_bublesort(array,x);
+        }
+       return array;
+   }
     
 }
