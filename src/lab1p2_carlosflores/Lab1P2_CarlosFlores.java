@@ -63,7 +63,7 @@ public class Lab1P2_CarlosFlores {
     }
     
     public static int [][] bublesort(int [][] mat, int tam, int fix){
-        int x = 1000;
+        int x = 1000;//ES SOLO PARA ASEGURARME QUE SE ARREGLE AL 100
         while(x > 0){
             for (int i = 0; i < mat.length-1; i++) {
                 if(mat[fix][i] > mat[fix][i+1]){
