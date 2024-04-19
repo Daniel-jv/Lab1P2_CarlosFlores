@@ -37,7 +37,8 @@ public class Lab1P2_CarlosFlores {
         array = array_bublesort(array,x);
         System.out.println("\nARREGLO DE MEDIANAS ORDENADO: ");
         print_array(array);
-        System.out.print("\nMEDIANA DE LAS MEDIANAS: ");
+        int LA_MERA_MEDIANA = mediana_FINAL(array);
+        System.out.print("\nMEDIANA DE LAS MEDIANAS: "+LA_MERA_MEDIANA);
         
     }
     
@@ -99,20 +100,25 @@ public class Lab1P2_CarlosFlores {
         }
     }
     
-   public static ArrayList array_bublesort(ArrayList<Integer> array, int x){
-        for (int i = 0; i < array.size()-1; i++) {
-            if(array.get(i) > array.get(i+1)){
-                 int x1 = array.get(i);
-                 int x2 = array.get(i+1);
-                 array.set(i, x2);
-                 array.set(i+1, x1);
-            }
-        }
-        while(x > 0){
-            x--;
-            array_bublesort(array,x);
-        }
-       return array;
-   }
+    public static ArrayList array_bublesort(ArrayList<Integer> array, int x){
+         for (int i = 0; i < array.size()-1; i++) {
+             if(array.get(i) > array.get(i+1)){
+                  int x1 = array.get(i);
+                  int x2 = array.get(i+1);
+                  array.set(i, x2);
+                  array.set(i+1, x1);
+             }
+         }
+         while(x > 0){
+             x--;
+             array_bublesort(array,x);
+         }
+        return array;
+    }
     
+    public static int mediana_FINAL(ArrayList <Integer> array){
+        int i = (array.size()-1)/2;
+        int x = array.get(i);
+        return x;
+    }
 }
