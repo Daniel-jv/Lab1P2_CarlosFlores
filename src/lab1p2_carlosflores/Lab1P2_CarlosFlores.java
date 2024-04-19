@@ -5,6 +5,11 @@ import java.util.Random;
 
 public class Lab1P2_CarlosFlores {
 
+    /*
+    FILA 1 ASIENTO 4
+    FILA 1 ASIENTO 4
+    FILA 1 ASIENTO 4
+    */
     static Random rand = new Random();
     static Scanner leer = new Scanner(System.in);
     
@@ -21,6 +26,7 @@ public class Lab1P2_CarlosFlores {
         print(mat);
         tam = tam-1;
         int fix = 0;
+        int x = 10;
         int mat_ord [][] = bublesort(mat, tam, fix);
         System.out.println("\nMATRIZ ORDENADA: ");
         print(mat_ord);
@@ -47,13 +53,17 @@ public class Lab1P2_CarlosFlores {
     }
     
     public static int [][] bublesort(int [][] mat, int tam, int fix){
-        for (int i = 0; i < mat.length-1; i++) {
-            if(mat[fix][i] > mat[fix][i+1]){
-                int x1 = mat[fix][i];
-                int x2 = mat[fix][i+1];
-                mat[fix][i] = x2;
-                mat[fix][i+1] = x1;
+        int x = 1000;
+        while(x > 0){
+            for (int i = 0; i < mat.length-1; i++) {
+                if(mat[fix][i] > mat[fix][i+1]){
+                    int x1 = mat[fix][i];
+                    int x2 = mat[fix][i+1];
+                    mat[fix][i] = x2;
+                    mat[fix][i+1] = x1;
+                }
             }
+            x--;
         }
         while(tam > fix){
             fix++;
@@ -61,5 +71,9 @@ public class Lab1P2_CarlosFlores {
         }
         return mat;
     }
+    
+    /*public static int [] array_bublesort(int [][] mat,){
+        
+    }*/
     
 }
